@@ -34,7 +34,7 @@ Vagrant.configure(2) do |config|
 
     config.vm.define name do |machine|
       machine.vm.box   = box
-      machine.vm.guest = :debian
+      machine.vm.guest = :redhat
 
       machine.vm.provider "virtualbox" do |vbox|
         vbox.gui    = gui
