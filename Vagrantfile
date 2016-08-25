@@ -14,7 +14,9 @@ NETMASK           = "255.255.255.0"
 
 # Default Virtualbox .box
 # See: https://wiki.debian.org/Teams/Cloud/VagrantBaseBoxes
-BOX               = 'debian/jessie64'
+
+BOX               = 'centos/7'
+#BOX               = 'debian/jessie64'
 
 
 HOSTS = {
