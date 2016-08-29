@@ -4,7 +4,7 @@
 
 # ---- Configuration variables ----
 
-GUI               = false # Enable/Disable GUI
+GUI               = true # Enable/Disable GUI
 RAM               = 128   # Default memory size in MB
 
 # Network configuration
