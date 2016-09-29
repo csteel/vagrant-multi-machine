@@ -19,6 +19,12 @@ Requirements
 
 * Ansible
 * Vagrant 1.6 or newer (1.5 may work, too; 1.4 does not)
+
+### Installing Ansible using miniconda
+
+    conda create --name ansible -c kbroughton ansible=2.0.0.2
+    source activate ansible
+
 * Vai_, a Vagrant provisioner plugin (see below for installation)
 * `debops` (of course ;-)
 
@@ -30,9 +36,17 @@ Quick Start
 
     vagrant plugin install vai
 
+* Edit Vagrantfile as desired.
+
+    nano Vagrantfile
+
+* update the vagrant boxes
+
+    vagrant box update
+
 * Fire up Vagrant: ``vagrant up``
 
-  This will create two virtual machine `web` and `db` and generate the
+  This will create one or two virtual machines, `web` and `db` and generate the
   inventory file in ``ansible/inventory``.
 
 * Run::

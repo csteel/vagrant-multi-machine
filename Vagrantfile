@@ -5,7 +5,7 @@
 # ---- Configuration variables ----
 
 GUI               = true # Enable/Disable GUI
-RAM               = 128   # Default memory size in MB
+RAM               = 256 #128   # Default memory size in MB
 
 # Network configuration
 DOMAIN            = ".nat.example.com"
@@ -15,13 +15,13 @@ NETMASK           = "255.255.255.0"
 # Default Virtualbox .box
 # See: https://wiki.debian.org/Teams/Cloud/VagrantBaseBoxes
 
-BOX               = 'centos/7'
+#BOX               = 'centos/7'
 #BOX               = 'debian/jessie64'
-
-
+#BOX                = 'ubuntu/trusty64'   # db
+BOX                = 'ubuntu/xenial64' # web
 HOSTS = {
-   "web" => [NETWORK+"10", RAM, GUI, BOX],
    "db" => [NETWORK+"11", RAM, GUI, BOX],
+#   "web" => [NETWORK+"10", RAM, GUI, BOX],
 }
 
 ANSIBLE_INVENTORY_DIR = 'ansible/inventory'
@@ -34,7 +34,8 @@ Vagrant.configure(2) do |config|
 
     config.vm.define name do |machine|
       machine.vm.box   = box
-      machine.vm.guest = :redhat
+#      machine.vm.guest = :redhat
+      machine.vm.guest = :ubuntu
 
       machine.vm.provider "virtualbox" do |vbox|
         vbox.gui    = gui
